@@ -1,5 +1,5 @@
 export interface Hero{
     id: number;
     name: string;
-    imgUrl: string;
+    imagePath: string;
 }

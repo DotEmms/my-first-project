@@ -1,16 +1,24 @@
-<h2>{{ hero.name | uppercase}}</h2> Details:
+<!-- <h2>{{ hero.name | titlecase }} </h2> Details:
 <div>
-    <span>Hero id: </span> {{hero.id}}
+    <span>Hero Id: </span> {{ hero.id }}
 </div>
 <div>
-    <span>Hero name: </span> {{hero.name}}
+    <span>Hero Name: </span> 
+    <input id="name" [(ngModel)]="hero.name" placeholder="name" />
+</div> -->
+
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+
+<div>
+    <button >Click me</button>
 </div>
-<button [disabled]="isClicked" (click)="HandleClicked()">Click me</button>
-<div style="text-align: center;">
-    <img src={{hero.imgUrl}} height="100" width="100">
-</div>
-<div style="text-align: center;">
-    <button [style.background-color]="toggle ? 'green' : 'red'" 
-            [style.color]="toggle ? 'yellow' : 'black'" 
-            (click)="HandleBtnClicked()">Change image</button>
-</div>
+
+<!--<div >
+    <img [src]= "hero.imagePath" />
+</div> -->
