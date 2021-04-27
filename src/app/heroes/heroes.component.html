@@ -1,1 +1,16 @@
-<h2>{{hero}}</h2>
+<h2>{{ hero.name | uppercase}}</h2> Details:
+<div>
+    <span>Hero id: </span> {{hero.id}}
+</div>
+<div>
+    <span>Hero name: </span> {{hero.name}}
+</div>
+<button [disabled]="isClicked" (click)="HandleClicked()">Click me</button>
+<div style="text-align: center;">
+    <img src={{hero.imgUrl}} height="100" width="100">
+</div>
+<div style="text-align: center;">
+    <button [style.background-color]="toggle ? 'green' : 'red'" 
+            [style.color]="toggle ? 'yellow' : 'black'" 
+            (click)="HandleBtnClicked()">Change image</button>
+</div>
