@@ -16,9 +16,9 @@
 </ul>
 
 <div>
-    <button >Click me</button>
+    <button (click)="HandleImageVisible()">Click me</button>
 </div>
 
-<!--<div >
-    <img [src]= "hero.imagePath" />
-</div> -->
+<div *ngIf="IsImageVisible">
+    <img [src]= "selectedHero.imagePath" />
+</div>

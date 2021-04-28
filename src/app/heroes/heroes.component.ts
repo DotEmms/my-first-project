@@ -17,6 +17,7 @@ export class HeroesComponent implements OnInit {
   clicked = 0;
   heroes = HEROES;
   selectedHero = this.heroes[0];
+  IsImageVisible = false;
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
@@ -30,7 +31,9 @@ export class HeroesComponent implements OnInit {
 
     this.clicked++;
   }
-
+  HandleImageVisible(){
+    this.IsImageVisible = !this.IsImageVisible;
+  }
   constructor() {
   }
 
