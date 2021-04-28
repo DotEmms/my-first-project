@@ -16,17 +16,20 @@ export class HeroesComponent implements OnInit {
 
   clicked = 0;
   heroes = HEROES;
+  selectedHero = this.heroes[0];
 
-  // HandleClicked() {
-  //   if (this.clicked % 2 === 0) {
-  //     this.hero.imagePath = "http://placekitten.com/400/600"
-  //   }
-  //   else {
-  //     this.hero.imagePath = "http://placekitten.com/600/400"
-  //   }
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+  HandleClicked() {
+    
+    if (this.clicked % 2 === 0) {
+    }
+    else {
+    }
 
-  //   this.clicked++;
-  // }
+    this.clicked++;
+  }
 
   constructor() {
   }
