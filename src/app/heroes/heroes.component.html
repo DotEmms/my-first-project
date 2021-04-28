@@ -1,12 +1,4 @@
-<h2>{{ selectedHero.name | titlecase }} </h2> Details:
-<div>
-    <span>Hero Id: </span> {{ selectedHero.id }}
-</div>
-<div>
-    <span>Hero Name: </span> 
-    <input id="name" [(ngModel)]="selectedHero.name" placeholder="name" />
-</div>
-
+<app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
 
 <h2>My Heroes</h2>
 <ul class="heroes">

@@ -7,12 +7,14 @@ import { HeroesComponent } from './heroes/heroes.component';
 
 import { FormsModule } from '@angular/forms';
 import { MypipePipe } from './mypipe.pipe';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
-    MypipePipe
+    MypipePipe,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
