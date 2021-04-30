@@ -1,6 +1,7 @@
 <app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
 
 <h2>My Heroes</h2>
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
         <span class="badge">{{hero.id | mypipe}}</span> {{hero.name}}
@@ -11,6 +12,8 @@
     <button (click)="HandleImageVisible()">Click me</button>
 </div>
 
-<div *ngIf="IsImageVisible">
-    <img [src]= "selectedHero.imagePath" />
+<div *ngIf="selectedHero">
+    <div *ngIf="IsImageVisible">
+        <img [src]= "selectedHero.imagePath" />
+    </div>
 </div>
