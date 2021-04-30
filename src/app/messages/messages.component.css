@@ -1,0 +1,11 @@
+h2{
+    color: red;
+}
+.clear{
+    height: 50px;
+    background-color: #EEE;
+    border-radius: 10px;
+}
+.clear:hover{
+    background-color: #2c3a41;
+}
