@@ -1,12 +1,19 @@
 h2{
     color: red;
 }
-.clear{
-    height: 50px;
-    background-color: #EEE;
-    border-radius: 10px;
-    border-style: none;
-}
-.clear:hover{
-    background-color: #2c3a41;
-}
+button {
+    margin-top: 20px;
+    background-color: #3f525c;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: #000;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }
