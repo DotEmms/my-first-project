@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { MypipePipe } from './mypipe.pipe';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MessagesComponent } from './messages/messages.component';
     HeroesComponent,
     MypipePipe,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
