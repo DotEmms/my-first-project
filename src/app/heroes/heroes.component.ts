@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../Hero';
 import { HeroService } from '../hero.service';
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-heroes',
@@ -15,11 +16,12 @@ export class HeroesComponent implements OnInit {
 
   IsImageVisible = false;
 
-  constructor(private HeroService: HeroService) {
+  constructor(private HeroService: HeroService, private messageService: MessagesService) {
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.messageService.addMessage(`HeroService: Clicked on: ${hero.id} ${hero.name}`);
   }
 
   getHeroes(): void{
