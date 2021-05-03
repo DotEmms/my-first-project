@@ -12,33 +12,33 @@ export class HeroService {
 
   constructor(private http: HttpClient, private MessagesService:MessagesService) { }
 
-  private log(message: string) {
-    this.MessagesService.addMessage(`HeroService: ${message}`);
-  }
+  // private log(message: string) {
+  //   this.MessagesService.addMessage(`HeroService: ${message}`);
+  // }
 
-  private heroesUrl = 'api/heroes';
+  // private heroesUrl = 'api/heroes';
 
-  getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl)
-  }
+  // getHeroes(): Observable<Hero[]> {
+  //   return this.http.get<Hero[]>(this.heroesUrl)
+  // }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
+  // private handleError<T>(operation = 'operation', result?: T) {
+  //   return (error: any): Observable<T> => {
   
-      console.error(error);
+  //     console.error(error);
   
-      this.log(`${operation} failed: ${error.message}`);
+  //     this.log(`${operation} failed: ${error.message}`);
   
-      return of(result as T);
-    };
-  }
+  //     return of(result as T);
+  //   };
+  // }
 
   // Without DB
-  // getHeroes(): Observable<Hero[]>{
-  //   const heroes = of(HEROES);
-  //   this.MessagesService.addMessage("HeroService: Fetched heroes.")
-  //   return heroes;
-  // }
+  getHeroes(): Observable<Hero[]>{
+    const heroes = of(HEROES);
+    this.MessagesService.addMessage("HeroService: Fetched heroes.")
+    return heroes;
+  }
 
   getHero(id: number): Observable<Hero> {
     const hero = HEROES.find(x => x.id === id) as Hero;

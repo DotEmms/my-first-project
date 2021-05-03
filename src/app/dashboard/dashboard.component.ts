@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
   }
 
   getSuperPowers(){
-    this.superPowerService.getSuperPowers().subscribe(x => this.superpowers = x.slice(1,5));
+    this.superPowerService.getSuperPowers().subscribe(x => this.superpowers = x.sort(() => Math.random() - 0.5)
+    .slice(1,5));
   }
 
   ngOnInit(): void {
