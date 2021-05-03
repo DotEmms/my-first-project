@@ -18,7 +18,7 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    const hero = HEROES.find(h => h.id === id) as Hero;
+    const hero = HEROES.find(x => x.id === id) as Hero;
     this.MessagesService.addMessage(`HeroService: Clicked on: ${id} ${hero.name}`);
     return of(hero);
   }
