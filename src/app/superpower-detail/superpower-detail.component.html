@@ -1,1 +1,9 @@
-<p>superpower-detail works!</p>
+<button class="clear" (click)="goBack()">Back</button>
+<div *ngIf="superpower">
+    <h2>{{superpower.Name | uppercase}} Details</h2>
+    <div><span>id: </span>{{superpower.id}}</div>
+    <div>
+      <label for="superpower-name">Superpower name: </label>
+      <input id="superpower-name" [(ngModel)]="superpower.Name" placeholder="Superpower name"/>
+    </div>
+  </div>

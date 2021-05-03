@@ -1,4 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SuperPower } from '../superPower';
+import { SuperpowerService } from '../superpower.service';
 
 @Component({
   selector: 'app-superpower-detail',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuperpowerDetailComponent implements OnInit {
 
-  constructor() { }
+  superpower?: SuperPower;
 
+  constructor(private route: ActivatedRoute,
+    private superPowerService: SuperpowerService,
+    private location: Location) { }
+
+    getSuperPower():void{
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      this.superPowerService.getSuperPower(id)
+        .subscribe(x => this.superpower = x);
+      
+    }
+
+    goBack():void{
+      this.location.back();
+    }
   ngOnInit(): void {
+    this.getSuperPower();
   }
 
 }

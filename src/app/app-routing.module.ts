@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { SuperpowerDetailComponent } from './superpower-detail/superpower-detail.component';
 import { SuperpowersComponent } from './superpowers/superpowers.component';
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'heroes', component: HeroesComponent},
   { path: 'detail/:id', component: HeroDetailComponent },
-  {path: 'superpowers', component: SuperpowersComponent}
+  {path: 'superpowers', component: SuperpowersComponent},
+  {path: 'spDetail/:id', component: SuperpowerDetailComponent}
 ];
 
 @NgModule({

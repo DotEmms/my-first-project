@@ -16,4 +16,10 @@ export class SuperpowerService {
     this.messageService.addMessage("SuperPowerService: Fetched superpowers");
     return superpowers;
   }
+
+  getSuperPower(id: number): Observable<SuperPower>{
+    const superpower = SUPERPOWERS.find(x => x.id === id) as SuperPower;
+    this.messageService.addMessage(`SuperPowerService: Fetched superpower: ${id} ${superpower.Name}`);
+    return of(superpower);
+  }
 }
