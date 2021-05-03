@@ -14,38 +14,40 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero?:Hero;
 
-  IsImageVisible = false;
+  //IsImageVisible = false;
 
   constructor(private HeroService: HeroService, private messageService: MessagesService) {
   }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.addMessage(`HeroService: Clicked on: ${hero.id} ${hero.name}`);
-  }
-
-  getHeroes(): void{
-    this.HeroService.getHeroes().subscribe(x => this.heroes = x);
-  }
-
-   HandleClicked() {
-    if(this.selectedHero){
-      if (this.clicked % 2 === 0) {
-        this.selectedHero.imagePath = "http://placekitten.com/400/600";
-        this.IsImageVisible = true;
-      }
-      else {
-        this.selectedHero.imagePath = "http://placekitten.com/600/400";
-        this.IsImageVisible = false;
-      }
+    getHeroes(): void{
+        this.HeroService.getHeroes().subscribe(x => this.heroes = x);
     }
-      this.clicked++;
-   }
-  HandleImageVisible(){
-    this.IsImageVisible = !this.IsImageVisible;
-  }
-  ngOnInit(): void {
-    this.getHeroes();
-  }
+
+    ngOnInit(): void {
+      this.getHeroes();
+    }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.addMessage(`HeroService: Clicked on: ${hero.id} ${hero.name}`);
+  // }
+
+  
+
+  //  HandleClicked() {
+  //   if(this.selectedHero){
+  //     if (this.clicked % 2 === 0) {
+  //       this.selectedHero.imagePath = "http://placekitten.com/400/600";
+  //       this.IsImageVisible = true;
+  //     }
+  //     else {
+  //       this.selectedHero.imagePath = "http://placekitten.com/600/400";
+  //       this.IsImageVisible = false;
+  //     }
+  //   }
+  //     this.clicked++;
+  //  }
+  // HandleImageVisible(){
+  //   this.IsImageVisible = !this.IsImageVisible;
+  // }
+  
 
 }
