@@ -22,6 +22,17 @@ export class HeroService {
     return this.http.get<Hero[]>(this.heroesUrl)
   }
 
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+  
+      console.error(error);
+  
+      this.log(`${operation} failed: ${error.message}`);
+  
+      return of(result as T);
+    };
+  }
+
   // Without DB
   // getHeroes(): Observable<Hero[]>{
   //   const heroes = of(HEROES);
