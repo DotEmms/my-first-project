@@ -15,7 +15,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SuperpowersComponent } from './superpowers/superpowers.component';
 import { SuperpowerDetailComponent } from './superpower-detail/superpower-detail.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     DashboardComponent,
     SuperpowersComponent,
     SuperpowerDetailComponent,
-    HeroSearchComponent,
   ],
   imports: [
     BrowserModule,
