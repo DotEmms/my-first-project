@@ -13,6 +13,8 @@ import { MypipePipe } from './mypipe.pipe';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SuperpowersComponent } from './superpowers/superpowers.component';
+import { SuperpowerDetailComponent } from './superpower-detail/superpower-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    SuperpowersComponent,
+    SuperpowerDetailComponent,
   ],
   imports: [
     BrowserModule,
