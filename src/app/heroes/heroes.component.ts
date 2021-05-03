@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Hero } from '../Hero';
 import { HeroService } from '../hero.service';
-import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-heroes',
@@ -9,45 +9,31 @@ import { MessagesService } from '../messages.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  clicked = 0;
+  heroes?: Hero[];
 
-  heroes: Hero[] = [];
-  selectedHero?:Hero;
+  constructor(private heroService: HeroService) { }
 
-  //IsImageVisible = false;
-
-  constructor(private HeroService: HeroService, private messageService: MessagesService) {
+  ngOnInit() {
+    this.getHeroes();
   }
-    getHeroes(): void{
-        this.HeroService.getHeroes().subscribe(x => this.heroes = x);
-    }
 
-    ngOnInit(): void {
-      this.getHeroes();
-    }
-  // onSelect(hero: Hero): void {
-  //   this.selectedHero = hero;
-  //   this.messageService.addMessage(`HeroService: Clicked on: ${hero.id} ${hero.name}`);
+  getHeroes(): void {
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
+  }
+
+  // add(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   this.heroService.addHero({ name } as Hero)
+  //     .subscribe(hero => {
+  //       this.heroes.push(hero);
+  //     });
   // }
 
-  
-
-  //  HandleClicked() {
-  //   if(this.selectedHero){
-  //     if (this.clicked % 2 === 0) {
-  //       this.selectedHero.imagePath = "http://placekitten.com/400/600";
-  //       this.IsImageVisible = true;
-  //     }
-  //     else {
-  //       this.selectedHero.imagePath = "http://placekitten.com/600/400";
-  //       this.IsImageVisible = false;
-  //     }
-  //   }
-  //     this.clicked++;
-  //  }
-  // HandleImageVisible(){
-  //   this.IsImageVisible = !this.IsImageVisible;
+  // delete(hero: Hero): void {
+  //   this.heroes = this.heroes.filter(h => h !== hero);
+  //   this.heroService.deleteHero(hero.id).subscribe();
   // }
-  
 
 }
