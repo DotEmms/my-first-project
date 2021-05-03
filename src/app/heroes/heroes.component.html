@@ -4,7 +4,9 @@
 
 <ul class="heroes">
     <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-        <span class="badge">{{hero.id | mypipe}}</span> {{hero.name}}
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id | mypipe}}</span> {{hero.name}}
+        </a>
     </li>
 </ul>
 
