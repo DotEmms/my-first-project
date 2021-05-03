@@ -12,7 +12,6 @@ import { SuperpowerService } from '../superpower.service';
 export class SuperpowerDetailComponent implements OnInit {
 
   superpower?: SuperPower;
-
   constructor(private route: ActivatedRoute,
     private superPowerService: SuperpowerService,
     private location: Location) { }
