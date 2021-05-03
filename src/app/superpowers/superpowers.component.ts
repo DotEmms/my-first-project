@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SuperPower } from '../superPower';
+import { SuperpowerService } from '../superpower.service';
 
 @Component({
   selector: 'app-superpowers',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuperpowersComponent implements OnInit {
 
-  constructor() { }
+  superpowers : SuperPower[] = [];
+  constructor(private superPowerService:SuperpowerService) { }
+
+  getSuperPowers(): void{
+    this.superPowerService.getSuperPowers().subscribe(x => this.superpowers = x);
+  }
 
   ngOnInit(): void {
+    this.getSuperPowers();
   }
 
 }

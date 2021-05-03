@@ -1,1 +1,7 @@
-<p>superpowers works!</p>
+<h2>My Super Powers: </h2>
+
+<ul class="superpowers">
+    <li *ngFor="let superpower of superpowers">
+        <span class="badge">{{superpower.id}}</span>{{superpower.Name}}
+    </li>
+</ul>
