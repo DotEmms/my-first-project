@@ -11,7 +11,6 @@ export class SuperpowersComponent implements OnInit {
   @Input() selectedSuperpower:SuperPower = {
     Name:"",
     Type:"",
-    IsOverpowered:true,
   };
   superpowers : SuperPower[] = [];
   constructor(private superPowerService:SuperpowerService) { }
