@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
 
 import { Hero } from './Hero';
 import { MessagesService } from './messages.service';
@@ -36,4 +35,14 @@ export class HeroService {
     return this.http.put(this.heroesUrl, hero, this.httpOptions);
   }
   
+  addHero(hero: Hero): Observable<Hero>{
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions);
+
+  }
+
+  deleteHero(id: number): Observable<Hero> {
+    const url = `${this.heroesUrl}/${id}`;
+  
+    return this.http.delete<Hero>(url, this.httpOptions);
+  };
 }
