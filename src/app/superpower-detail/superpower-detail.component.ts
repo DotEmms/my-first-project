@@ -26,6 +26,9 @@ export class SuperpowerDetailComponent implements OnInit {
     goBack():void{
       this.location.back();
     }
+    save(): void {
+      this.superPowerService.updateSuperpower(this.superpower).subscribe(() => this.goBack());
+    }
   ngOnInit(): void {
     this.getSuperPower();
   }

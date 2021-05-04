@@ -4,7 +4,15 @@
     <div><span>id: </span>{{superpower.id}}</div>
     <div>
       <label for="superpower-name">Superpower name: </label>
-      <input id="superpower-name" [(ngModel)]="superpower.Name" placeholder="Superpower name"/>
+      <input for="superpower-name" [(ngModel)]="superpower.Name" placeholder="Superpower name"/>
     </div>
-    <div>Type: {{superpower.Type}}</div>
+    <div>
+      <label for="superpower-type">Superpower type: </label>
+      <input for="superpower-type" [(ngModel)]="superpower.Type" placeholder="Superpower type"/>
+    </div>
+    <div>
+      <label for="superpower-overpowered">Overpowered superpower: </label>
+      <input for="superpower-overpowered" [(ngModel)]="superpower.IsOverpowered" value="superpower-overpowered"/>
+    </div>
+    <button (click)="save()">save</button>
   </div>
