@@ -1,5 +1,5 @@
 export interface SuperPower{
-    id?: Number;
+    id?: number;
     name: string;
     type: string;
     isOverpowered?: boolean;
